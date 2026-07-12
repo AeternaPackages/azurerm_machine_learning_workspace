@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.machine_learning_workspaces : {
       for k2, v2 in coalesce(v1.machine_learning_compute_clusters, {}) :
       "${k1}/${k2}" => merge(v2, {
-        machine_learning_workspace_id = module.machine_learning_workspaces.machine_learning_workspaces["${k1}"].id
+        machine_learning_workspace_id = module.machine_learning_workspaces.machine_learning_workspaces_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.machine_learning_workspaces : {
       for k2, v2 in coalesce(v1.machine_learning_compute_instances, {}) :
       "${k1}/${k2}" => merge(v2, {
-        machine_learning_workspace_id = module.machine_learning_workspaces.machine_learning_workspaces["${k1}"].id
+        machine_learning_workspace_id = module.machine_learning_workspaces.machine_learning_workspaces_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.machine_learning_workspaces : {
       for k2, v2 in coalesce(v1.machine_learning_inference_clusters, {}) :
       "${k1}/${k2}" => merge(v2, {
-        machine_learning_workspace_id = module.machine_learning_workspaces.machine_learning_workspaces["${k1}"].id
+        machine_learning_workspace_id = module.machine_learning_workspaces.machine_learning_workspaces_id["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.machine_learning_workspaces : {
       for k2, v2 in coalesce(v1.machine_learning_synapse_sparks, {}) :
       "${k1}/${k2}" => merge(v2, {
-        machine_learning_workspace_id = module.machine_learning_workspaces.machine_learning_workspaces["${k1}"].id
+        machine_learning_workspace_id = module.machine_learning_workspaces.machine_learning_workspaces_id["${k1}"]
       })
     }
   ]...)
