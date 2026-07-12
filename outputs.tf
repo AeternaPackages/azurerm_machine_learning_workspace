@@ -1,4 +1,9 @@
 # --- azurerm_machine_learning_workspace ---
+output "machine_learning_workspaces_id" {
+  description = "Map of id values across all machine_learning_workspaces, keyed the same as var.machine_learning_workspaces"
+  value       = module.machine_learning_workspaces.machine_learning_workspaces_id
+}
+
 output "machine_learning_workspaces_application_insights_id" {
   description = "Map of application_insights_id values across all machine_learning_workspaces, keyed the same as var.machine_learning_workspaces"
   value       = module.machine_learning_workspaces.machine_learning_workspaces_application_insights_id
@@ -130,6 +135,11 @@ output "machine_learning_workspaces_workspace_id" {
 }
 
 # --- azurerm_machine_learning_compute_cluster ---
+output "machine_learning_compute_clusters_id" {
+  description = "Map of id values across all machine_learning_compute_clusters, keyed the same as var.machine_learning_compute_clusters"
+  value       = module.machine_learning_compute_clusters.machine_learning_compute_clusters_id
+}
+
 output "machine_learning_compute_clusters_description" {
   description = "Map of description values across all machine_learning_compute_clusters, keyed the same as var.machine_learning_compute_clusters"
   value       = module.machine_learning_compute_clusters.machine_learning_compute_clusters_description
@@ -202,6 +212,11 @@ output "machine_learning_compute_clusters_vm_size" {
 }
 
 # --- azurerm_machine_learning_compute_instance ---
+output "machine_learning_compute_instances_id" {
+  description = "Map of id values across all machine_learning_compute_instances, keyed the same as var.machine_learning_compute_instances"
+  value       = module.machine_learning_compute_instances.machine_learning_compute_instances_id
+}
+
 output "machine_learning_compute_instances_assign_to_user" {
   description = "Map of assign_to_user values across all machine_learning_compute_instances, keyed the same as var.machine_learning_compute_instances"
   value       = module.machine_learning_compute_instances.machine_learning_compute_instances_assign_to_user
@@ -263,6 +278,11 @@ output "machine_learning_compute_instances_virtual_machine_size" {
 }
 
 # --- azurerm_machine_learning_inference_cluster ---
+output "machine_learning_inference_clusters_id" {
+  description = "Map of id values across all machine_learning_inference_clusters, keyed the same as var.machine_learning_inference_clusters"
+  value       = module.machine_learning_inference_clusters.machine_learning_inference_clusters_id
+}
+
 output "machine_learning_inference_clusters_cluster_purpose" {
   description = "Map of cluster_purpose values across all machine_learning_inference_clusters, keyed the same as var.machine_learning_inference_clusters"
   value       = module.machine_learning_inference_clusters.machine_learning_inference_clusters_cluster_purpose
@@ -309,6 +329,11 @@ output "machine_learning_inference_clusters_tags" {
 }
 
 # --- azurerm_machine_learning_synapse_spark ---
+output "machine_learning_synapse_sparks_id" {
+  description = "Map of id values across all machine_learning_synapse_sparks, keyed the same as var.machine_learning_synapse_sparks"
+  value       = module.machine_learning_synapse_sparks.machine_learning_synapse_sparks_id
+}
+
 output "machine_learning_synapse_sparks_description" {
   description = "Map of description values across all machine_learning_synapse_sparks, keyed the same as var.machine_learning_synapse_sparks"
   value       = module.machine_learning_synapse_sparks.machine_learning_synapse_sparks_description
