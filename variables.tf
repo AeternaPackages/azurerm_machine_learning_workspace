@@ -87,10 +87,10 @@ EOT
     name                            = string
     resource_group_name             = string
     storage_account_id              = string
-    storage_account_access_type     = optional(string) # Default: "AccessKey"
-    sku_name                        = optional(string) # Default: "Basic"
-    service_side_encryption_enabled = optional(bool)   # Default: false
-    public_network_access_enabled   = optional(bool)   # Default: true
+    storage_account_access_type     = optional(string)
+    sku_name                        = optional(string)
+    service_side_encryption_enabled = optional(bool)
+    public_network_access_enabled   = optional(bool)
     primary_user_assigned_identity  = optional(string)
     high_business_impact            = optional(bool)
     image_build_compute_name        = optional(string)
@@ -98,8 +98,8 @@ EOT
     friendly_name                   = optional(string)
     description                     = optional(string)
     container_registry_id           = optional(string)
-    kind                            = optional(string) # Default: "Default"
-    v1_legacy_mode_enabled          = optional(bool)   # Default: false
+    kind                            = optional(string)
+    v1_legacy_mode_enabled          = optional(bool)
     identity = object({
       identity_ids = optional(set(string))
       type         = string
@@ -116,10 +116,10 @@ EOT
     }))
     managed_network = optional(object({
       isolation_mode                = optional(string)
-      provision_on_creation_enabled = optional(bool) # Default: false
+      provision_on_creation_enabled = optional(bool)
     }))
     serverless_compute = optional(object({
-      public_ip_enabled = optional(bool) # Default: false
+      public_ip_enabled = optional(bool)
       subnet_id         = optional(string)
     }))
     machine_learning_compute_clusters = optional(map(object({
@@ -128,9 +128,9 @@ EOT
       vm_priority               = string
       vm_size                   = string
       description               = optional(string)
-      local_auth_enabled        = optional(bool) # Default: true
-      node_public_ip_enabled    = optional(bool) # Default: true
-      ssh_public_access_enabled = optional(bool) # Default: false
+      local_auth_enabled        = optional(bool)
+      node_public_ip_enabled    = optional(bool)
+      ssh_public_access_enabled = optional(bool)
       subnet_resource_id        = optional(string)
       tags                      = optional(map(string))
       scale_settings = object({
@@ -153,8 +153,8 @@ EOT
       virtual_machine_size   = string
       authorization_type     = optional(string)
       description            = optional(string)
-      local_auth_enabled     = optional(bool) # Default: true
-      node_public_ip_enabled = optional(bool) # Default: true
+      local_auth_enabled     = optional(bool)
+      node_public_ip_enabled = optional(bool)
       subnet_resource_id     = optional(string)
       tags                   = optional(map(string))
       assign_to_user = optional(object({
@@ -173,7 +173,7 @@ EOT
       kubernetes_cluster_id = string
       location              = string
       name                  = string
-      cluster_purpose       = optional(string) # Default: "FastProd"
+      cluster_purpose       = optional(string)
       description           = optional(string)
       tags                  = optional(map(string))
       identity = optional(object({
@@ -181,10 +181,10 @@ EOT
         type         = string
       }))
       ssl = optional(object({
-        cert                      = optional(string) # Default: ""
-        cname                     = optional(string) # Default: ""
-        key                       = optional(string) # Default: ""
-        leaf_domain_label         = optional(string) # Default: ""
+        cert                      = optional(string)
+        cname                     = optional(string)
+        key                       = optional(string)
+        leaf_domain_label         = optional(string)
         overwrite_existing_domain = optional(bool)
       }))
     })))
@@ -193,7 +193,7 @@ EOT
       name                  = string
       synapse_spark_pool_id = string
       description           = optional(string)
-      local_auth_enabled    = optional(bool) # Default: true
+      local_auth_enabled    = optional(bool)
       tags                  = optional(map(string))
       identity = optional(object({
         identity_ids = optional(set(string))
