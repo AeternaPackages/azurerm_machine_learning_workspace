@@ -39,30 +39,30 @@ locals {
 }
 
 module "machine_learning_workspaces" {
-  source                      = "git::https://github.com/AeternaModules/azurerm_machine_learning_workspace.git?ref=v4.81.0"
+  source                      = "git::https://github.com/AeternaModules/azurerm_machine_learning_workspace.git?ref=v5.0.0"
   machine_learning_workspaces = local.machine_learning_workspaces
 }
 
 module "machine_learning_compute_clusters" {
-  source                            = "git::https://github.com/AeternaModules/azurerm_machine_learning_compute_cluster.git?ref=v4.81.0"
+  source                            = "git::https://github.com/AeternaModules/azurerm_machine_learning_compute_cluster.git?ref=v5.0.0"
   machine_learning_compute_clusters = local.machine_learning_compute_clusters
   depends_on                        = [module.machine_learning_workspaces]
 }
 
 module "machine_learning_compute_instances" {
-  source                             = "git::https://github.com/AeternaModules/azurerm_machine_learning_compute_instance.git?ref=v4.81.0"
+  source                             = "git::https://github.com/AeternaModules/azurerm_machine_learning_compute_instance.git?ref=v5.0.0"
   machine_learning_compute_instances = local.machine_learning_compute_instances
   depends_on                         = [module.machine_learning_workspaces]
 }
 
 module "machine_learning_inference_clusters" {
-  source                              = "git::https://github.com/AeternaModules/azurerm_machine_learning_inference_cluster.git?ref=v4.81.0"
+  source                              = "git::https://github.com/AeternaModules/azurerm_machine_learning_inference_cluster.git?ref=v5.0.0"
   machine_learning_inference_clusters = local.machine_learning_inference_clusters
   depends_on                          = [module.machine_learning_workspaces]
 }
 
 module "machine_learning_synapse_sparks" {
-  source                          = "git::https://github.com/AeternaModules/azurerm_machine_learning_synapse_spark.git?ref=v4.81.0"
+  source                          = "git::https://github.com/AeternaModules/azurerm_machine_learning_synapse_spark.git?ref=v5.0.0"
   machine_learning_synapse_sparks = local.machine_learning_synapse_sparks
   depends_on                      = [module.machine_learning_workspaces]
 }
